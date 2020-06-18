@@ -4,14 +4,14 @@ IMG=${1:-}
 
 if [ -z "$IMG" ]
 then
-	IMGPATH="/Users/julianlioanag/wallpapers"
+	IMGPATH=/Users/julianlioanag/wallpapers
+	wal --backend colorz -i $IMGPATH
+	neofetch
 else
-	IMGPATH="/Users/julianlioanag/wallpapers/$IMG"
+	IMGPATH=/Users/julianlioanag/wallpapers/$IMG
+	wal --backend colorz -i $IMGPATH
+	neofetch --iterm2 $IMGPATH
 fi
-
-echo "wal assigned to $IMGPATH"
-wal --backend colorz -i $IMGPATH
-neofetch
 
 #open -a iTerm .
 #pipes.sh -t 0
