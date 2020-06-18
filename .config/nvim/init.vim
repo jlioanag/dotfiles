@@ -18,7 +18,7 @@ set smarttab                            " Makes tabbing smarter will realize you
 set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
-set laststatus=0                        " Always display the status line
+set laststatus=2                      
 set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
@@ -87,8 +87,30 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'danro/rename.vim'
 Plug 'mhinz/vim-startify'
+Plug 'itchyny/lightline.vim'
+Plug 'dylanaraps/wal.vim'
 call plug#end()
+
+" Lightline + wal
+colorscheme wal
+if !has('gui_running')
+  set t_Co=256
+endif
+let g:lightline = {'colorscheme': 'seoul256'}
 
 " Goyo + Limelight
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Startify
+let g:startify_custom_header = [
+  \'',
+  \'     ::::    ::::::::::::::::::::: :::     ::::::::::::::  :::   ::: ',
+  \'    :+:+:   :+::+:      :+:    :+::+:     :+:    :+:     :+:+: :+:+: ',
+  \'   :+:+:+  +:++:+      +:+    +:++:+     +:+    +:+    +:+ +:+:+ +:+ ',
+  \'  +#+ +:+ +#++#++:++# +#+    +:++#+     +:+    +#+    +#+  +:+  +#+  ',
+  \'  +#+  +#+#+#+#+      +#+    +#+ +#+   +#+     +#+    +#+       +#+  ',
+  \' #+#   #+#+##+#      #+#    #+#  #+#+#+#      #+#    #+#       #+#   ',
+  \'###    ######################     ###    ##############       ###    ',
+  \'',
+  \]
