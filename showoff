@@ -1,0 +1,17 @@
+#!/bin/bash
+
+IMG=${1:-}
+
+if [ -z "$IMG" ]
+then
+	IMGPATH="/Users/julianlioanag/wallpapers"
+else
+	IMGPATH="/Users/julianlioanag/wallpapers/$IMG"
+fi
+
+echo "wal assigned to $IMGPATH"
+wal --backend colorz -i $IMGPATH
+neofetch
+
+#open -a iTerm .
+#pipes.sh -t 0
